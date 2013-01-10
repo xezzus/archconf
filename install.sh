@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# ADD USERS
+#useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video -s /bin/bash archie
+
 # INSTALL
-pacman -Syu && pacman -S gvim terminus-font
+#pacman -Syu && pacman -S gvim terminus-font
 
 # COPY CONFIG FILES
 cp ./files/fstab /etc
@@ -12,3 +15,4 @@ cp ./files/mirrorlist /etc/pacman.d
 
 # COMMAND
 locale-gen
+
