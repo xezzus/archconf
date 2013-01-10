@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # ADD USERS
-#useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video -s /bin/bash archie
+useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video -s /bin/bash web
 
 # COPY CONFIG FILES
 cp ./files/fstab /etc
@@ -14,4 +14,4 @@ cp ./files/mirrorlist /etc/pacman.d
 locale-gen
 
 # INSTALL
-#pacman -Syy && pacman -Syu && pacman -S gvim terminus-font
+pacman -Syy && pacman -Syu && pacman -S gvim terminus-font
