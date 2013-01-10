@@ -1,0 +1,2 @@
+Server = http://mirror.yandex.ru/archlinux/$repo/os/$arch
+Server = http://ftp.linux.kiev.ua/pub/Linux/ArchLinux/$repo/os/$arch
