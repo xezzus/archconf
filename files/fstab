@@ -5,7 +5,13 @@
 # that works even if disks are added and removed. See fstab(5).
 #
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
+/dev/sda1 /               ext4   noatime,errors=remount-ro 0       1
+
 proc            /proc           proc    defaults        0       0
-# / was on /dev/sda1 during installation
-/dev/sda /               ext4   noatime,errors=remount-ro 0       1
-/dev/sdb2 /media         xfs    noatime                   0       0
+tmpfs           /dev            tmpfs   size=100M       0       0
+tmpfs           /run            tmpfs   size=100M       0       0
+tmpfs           /tmp            tmpfs   size=100M       0       0
+tmpfs           /var/tmp        tmpfs   size=100M       0       0
+tmpfs           /var/run        tmpfs   size=100M       0       0
+tmpfs           /var/log        tmpfs   size=100M       0       0
+
