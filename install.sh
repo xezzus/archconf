@@ -10,7 +10,7 @@ pacman -Syy && pacman -Syu && pacman -S gvim terminus-font wicd sudo mc xorg-ser
 
 # DWM
 abs community/dwm
-cp /var/abs/community/dwm ~/dwm
+cp -r /var/abs/community/dwm ~/dwm
 cp ./files/dwm.c ~/dwm
 cp ./files/config.h ~/dwm
 cd ~/dwm && makepkg -i && cd ~/$archconf
