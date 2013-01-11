@@ -18,9 +18,10 @@ cp ./files/sudoers /etc
 cp ./files/gtkrc /etc/gtk-2.0
 
 # CONFIG USER
+mkdir -p /home/web/.config
 cp ./files/xinitrc $user/.xinitrc
 cp ./files/conkyrc $user/.conkyrc
-cp -r ./files/config $user/.config
+cp -r ./files/config/sakura $user/.config
 cp -r ./files/dzen $user/.dzen
 cp -r ./files/mplayer $user/.mplayer
 cp -r ./files/BSMsdm /usr/share/themes
