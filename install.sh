@@ -1,13 +1,28 @@
 #!/bin/sh
 
+# DATA
 user=web
 
 # INSTALL
+cp ./files/mirrorlist /etc/pacman.d
 pacman -Syy && pacman -Syu && pacman -S gvim terminus-font wicd sudo
 
-# ADD USERS
-useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video -s /bin/bash $user
-passwd && passwd $user
+# CONFIG
+cp ./files/fstab /etc
+cp ./files/locale.conf /etc
+cp ./files/vconsole.conf /etc
+cp ./files/sudoers /etc
 
 # COMMAND
-locale-gen
+if [ -z `locale | grep 'ru_RU.UTF-8'` ]
+then
+  cp ./files/locale.gen /etc
+  locale-gen
+fi
+
+# ADD USERS
+if [ -z `cat /etc/passwd | grep $user` ] 
+then
+  useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video -s /bin/bash $user
+  passwd && passwd $user
+fi
