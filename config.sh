@@ -11,7 +11,7 @@ abs community/dwm
 cp -r /var/abs/community/dwm/* $conf
 cp $conf/files/dwm.c $conf
 cp $conf/files/config.h $conf
-makepkg -i --skipinteg --asroot
+makepkg -i --skipinteg --asroot --clean && rm *.tar.*
 
 
 
