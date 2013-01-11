@@ -33,7 +33,7 @@ cp -r ./files/dzen $user/.dzen
 cp -r ./files/mplayer $user/.mplayer
 
 # CONFIG RTORRENT
-cp ./files/rtorrect.rc $user/.rtorrect.rc
+cp ./files/rtorrent.rc $user/.rtorrent.rc
 mkdir -p /media/torrent/session
 mkdir -p /media/torrent/image
 mkdir -p /media/torrent/books
