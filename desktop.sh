@@ -2,6 +2,11 @@
 
 # DATA
 user=/home/web
+image=/media/image
+books=/media/books
+audio=/media/audio
+video=/media/video
+loads=/media/loads
 
 # DWM
 abs community/dwm
@@ -39,16 +44,16 @@ mkdir -p /media/torrent/image
 mkdir -p /media/torrent/books
 mkdir -p /media/torrent/audio
 mkdir -p /media/torrent/video
-mkdir -p /media/image
-mkdir -p /media/books
-mkdir -p /media/audio
-mkdir -p /media/video
-mkdir -p /media/loads
-ln -s /media/image $user
-ln -s /media/books $user
-ln -s /media/audio $user
-ln -s /media/video $user
-ln -s /media/loads $user
+mkdir -p $image
+mkdir -p $books
+mkdir -p $audio
+mkdir -p $video
+mkdir -p $loads
+if [ ! -f $image ] ln -s $image $user
+if [ ! -f $books ] ln -s $books $user
+if [ ! -f $audio ] ln -s $audio $user
+if [ ! -f $video ] ln -s $video $user
+if [ ! -f $loads ] ln -s $loads $user
 
 # CONFIG THEMES
 cp -r ./files/BSMsdm /usr/share/themes
