@@ -2,19 +2,18 @@
 
 # DATA
 user=web
-conf=archconf
+conf=/root/archconf
 
 # INSTALL
 
 # DWM
 abs community/dwm
 rm -r ~/dwm && cp -r /var/abs/community/dwm ~/dwm
+cp ./files/dwm.c ~/dwm
+cp ./files/config.h ~/dwm
 cd ~/dwm
-makepkg -i --asroot 
-#cp ./files/dwm.c ~/dwm
-#cp ./files/config.h ~/dwm
-makepkg -efi --skipinteg --asroot
-cd ~/$conf
+makepkg -efi --skipinteg --asroot 
+cd $conf
 
 
 
