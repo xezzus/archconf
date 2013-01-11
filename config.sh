@@ -8,10 +8,10 @@ conf=/root/archconf
 
 # DWM
 abs community/dwm
-rm -r /root/dwm && cp -r /var/abs/community/dwm /root/dwm
-cp ./files/dwm.c /root/dwm
-cp ./files/config.h /root/dwm
-cd /root/dwm && makepkg -efi --skipinteg --asroot && cd $conf
+cp -r /var/abs/community/dwm $conf
+cp $conf/files/dwm.c $conf
+cp $conf/files/config.h $conf
+makepkg -efi --skipinteg --asroot
 
 
 
