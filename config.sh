@@ -9,9 +9,14 @@ conf=archconf
 # DWM
 abs community/dwm
 cp -r /var/abs/community/dwm ~/dwm
-#cp ./files/dwm.c ~/dwm
+cd ~/dwm
+makepkg -i --asroot 
+cp ./files/dwm.c ~/dwm
 cp ./files/config.h ~/dwm
-cd ~/dwm && makepkg -i --asroot && cd ~/$archconf
+makepkg -efi --skipinteg --asroot
+cd ~/$conf
+
+
 
 # CONFIG ROOT
 cp ./files/fstab /etc
