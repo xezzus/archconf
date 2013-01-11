@@ -1,0 +1,14 @@
+out_to_console yes
+gap_y -540
+out_to_x no
+update_interval 2
+total_run_times 0
+use_spacer none
+
+TEXT
+echo -n '^fg(\#FFFFFF)^i($HOME/.dzen/arr_down.xbm) ^fg(\#99CCFF)${downspeed eth0}^fg(\#FFFFFF) '
+echo -n '^fg(\#FFFFFF)^i($HOME/.dzen/arr_up.xbm) ^fg(\#99CCFF)${upspeed eth0}^fg(\#FFFFFF) '
+echo -n '^fg(\#FFFFFF)^i($HOME/.dzen/cpu.xbm) ^fg(\#99CCFF)${cpu}%^fg(\#FFFFFF) '
+echo -n '^i($HOME/.dzen/mem.xbm)^fg(\#99CCFF) ${memperc}%^fg(\#FFFFFF) '
+
+echo
