@@ -11,7 +11,7 @@ abs community/dwm
 cp -r /var/abs/community/dwm ~/dwm
 cp ./files/dwm.c ~/dwm
 cp ./files/config.h ~/dwm
-cd ~/dwm && makepkg -i && cd ~/$archconf
+cd ~/dwm && makepkg -i --asroot && cd ~/$archconf
 
 # CONFIG ROOT
 cp ./files/fstab /etc
@@ -37,7 +37,7 @@ then
 fi
 
 # ADD SERVICES
-if [ -z `systemctl | grep 'wicd.service'` ]
+if [ -z `systemctl | grep 'wicd.service' | awk '{print($1)}'` ]
 then
   systemctl enable wicd.service
 fi
