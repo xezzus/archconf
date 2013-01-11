@@ -49,23 +49,23 @@ mkdir -p $books
 mkdir -p $audio
 mkdir -p $video
 mkdir -p $loads
-if [ -f $image ! ] 
+if ! [ -f $image ] 
 then
   ln -s $image $user
 fi
-if [ -f $books ! ] 
+if ! [ -f $books ] 
 then
   ln -s $books $user
 fi
-if [ -f $audio ! ] 
+if ! [ -f $audio ] 
 then
   ln -s $audio $user
 fi
-if [ -f $video ! ] 
+if ! [ -f $video ] 
 then
   ln -s $video $user
 fi
-if [ -f $loads ! ] 
+if ! [ -f $loads ] 
 then
   ln -s $loads $user
 fi
