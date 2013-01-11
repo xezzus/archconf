@@ -49,11 +49,11 @@ mkdir -p $books
 mkdir -p $audio
 mkdir -p $video
 mkdir -p $loads
-if [ ! -f $image ] ; ln -s $image $user
-if [ ! -f $books ] ; ln -s $books $user
-if [ ! -f $audio ] ; ln -s $audio $user
-if [ ! -f $video ] ; ln -s $video $user
-if [ ! -f $loads ] ; ln -s $loads $user
+[ ! -f $image ] ; ln -s $image $user
+[ ! -f $books ] ; ln -s $books $user
+[ ! -f $audio ] ; ln -s $audio $user
+[ ! -f $video ] ; ln -s $video $user
+[ ! -f $loads ] ; ln -s $loads $user
 
 # CONFIG THEMES
 cp -r ./files/BSMsdm /usr/share/themes
