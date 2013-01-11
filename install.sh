@@ -5,7 +5,7 @@ user=web
 
 # INSTALL
 cp ./files/mirrorlist /etc/pacman.d
-pacman -Syy && pacman -Syu && pacman -S gvim terminus-font wicd sudo
+pacman -Syy && pacman -Syu && pacman -S gvim terminus-font wicd sudo mc
 
 # CONFIG
 cp ./files/fstab /etc
@@ -14,7 +14,7 @@ cp ./files/vconsole.conf /etc
 cp ./files/sudoers /etc
 
 # COMMAND
-if [ -z `locale | grep 'ru_RU.UTF-8'` ]
+if [ -z `locale | grep ru_RU` ]
 then
   cp ./files/locale.gen /etc
   locale-gen
