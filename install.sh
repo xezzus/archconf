@@ -14,7 +14,7 @@ cp ./files/vconsole.conf /etc
 cp ./files/sudoers /etc
 
 # COMMAND
-if [ -z `locale | grep ru_RU` ]
+if [ -z `locale | grep 'LANG=ru_RU'` ]
 then
   cp ./files/locale.gen /etc
   locale-gen
