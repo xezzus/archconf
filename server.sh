@@ -4,6 +4,8 @@
 install='pacman --noconfirm -S'
 
 # INSTALL
+if [ `pacman -Qi abs | wc -l` -eq 0 ] ; then $install abs ; fi
+if [ `pacman -Qi wget | wc -l` -eq 0 ] ; then $install wget ; fi
 if [ `pacman -Qi atoconf | wc -l` -eq 0 ] ; then $install autoconf ; fi
 if [ `pacman -Qi automake | wc -l` -eq 0 ] ; then $install automake ; fi
 if [ `pacman -Qi binutils | wc -l` -eq 0 ] ; then $install binutils ; fi

@@ -37,3 +37,5 @@ cp -r ./files/BSMsdm /usr/share/themes
 cp -r ./files/Xeonyx /usr/share/icons
 cp -r ./files/default /usr/share/icons
 cp -r ./files/elementary /usr/share/icons
+
+chown web:users $user
