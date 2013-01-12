@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# WORKSPACE
-mkdir -p /home/web/public
-
 # METHOD INSTALL
 install='pacman --noconfirm -S'
 
@@ -27,3 +24,21 @@ if [ `pacman -Qi | grep 'php-xsl' | wc -l` -eq 0 ] ; then $install php-xsl ; fi
 if [ `pecl list | grep mongo | wc -l` -eq 0 ] ; then pecl install mongo ; fi
 cp ./files/php.ini /etc/php
 cp ./files/php-fpm.conf /etc/php
+
+# ADD PHP-FPM
+if [ `systemctl | grep 'php-fpm.service' | wc -l` -eq 0 ]
+then
+  systemctl enable wicd.service
+fi
+
+# ADD NGINX
+if [ `systemctl | grep 'nginx.service' | wc -l` -eq 0 ]
+then
+  systemctl enable nginx.service
+fi
+
+# ADD BIND
+if [ `systemctl | grep 'bind.service' | wc -l` -eq 0 ]
+then
+  systemctl enable bind.service
+fi

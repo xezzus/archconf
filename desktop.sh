@@ -1,12 +1,18 @@
 #!/bin/sh
 
-# DATA
+# METHOD INSTALL
+install='pacman --noconfirm -S'
 user=/home/web
-image=/media/image
-books=/media/books
-audio=/media/audio
-video=/media/video
-loads=/media/loads
+
+if [ `pacman -Qi | grep 'xorg-server' | wc -l` -eq 0 ] ; then $install xorg-server ; fi
+if [ `pacman -Qi | grep 'dmenu' | wc -l` -eq 0 ] ; then $install dmenu ; fi
+if [ `pacman -Qi | grep 'dzen2' | wc -l` -eq 0 ] ; then $install dzen2 ; fi
+if [ `pacman -Qi | grep 'conky' | wc -l` -eq 0 ] ; then $install conky ; fi
+if [ `pacman -Qi | grep 'gthumb' | wc -l` -eq 0 ] ; then $install gthumb ; fi
+if [ `pacman -Qi | grep 'chromium' | wc -l` -eq 0 ] ; then $install chromium ; fi
+if [ `pacman -Qi | grep 'sakura' | wc -l` -eq 0 ] ; then $install sakura ; fi
+if [ `pacman -Qi | grep 'slim' | wc -l` -eq 0 ] ; then $install slim ; fi
+if [ `pacman -Qi | grep 'slim-themes' | wc -l` -eq 0 ] ; then $install slim-themes ; fi
 
 # DWM
 abs community/dwm
@@ -15,68 +21,17 @@ cp ./files/dwm.c ./
 cp ./files/config.h ./
 makepkg -i --skipinteg --asroot --clean && rm *.tar.*
 
-# CONFIG ROOT
-cp ./files/fstab /etc
-cp ./files/locale.conf /etc
-cp ./files/vconsole.conf /etc
-cp ./files/sudoers /etc
-cp ./files/gtkrc /etc/gtk-2.0
-
-# CONFIG VIM
-cp ./files/vide /usr/bin
-cp ./files/jellybeans.vim /usr/share/vim/vim73/colors
-cp ./files/vimrc /etc
-cp ./files/mc.ext /etc/mc
-
 # CONFIG USER
 mkdir -p /home/web/.config
 cp ./files/xinitrc $user/.xinitrc
 cp ./files/conkyrc $user/.conkyrc
-cp ./files/gitconfig $user/.gitconfig
 cp -r ./files/config/sakura $user/.config
 cp -r ./files/dzen $user/.dzen
 cp -r ./files/mplayer $user/.mplayer
 
-# CONFIG RTORRENT
-cp ./files/rtorrent.rc $user/.rtorrent.rc
-mkdir -p /media/torrent/session
-mkdir -p /media/torrent/image
-mkdir -p /media/torrent/books
-mkdir -p /media/torrent/audio
-mkdir -p /media/torrent/video
-mkdir -p $image
-mkdir -p $books
-mkdir -p $audio
-mkdir -p $video
-mkdir -p $loads
-if ! [ -d $image ] ; then ln -s $image $user ; fi
-if ! [ -d $books ] ; then ln -s $books $user ; fi
-if ! [ -d $audio ] ; then ln -s $audio $user ; fi
-if ! [ -d $video ] ; then ln -s $video $user ; fi
-if ! [ -d $loads ] ; then ln -s $loads $user ; fi
-
 # CONFIG THEMES
+cp ./files/gtkrc /etc/gtk-2.0
 cp -r ./files/BSMsdm /usr/share/themes
 cp -r ./files/Xeonyx /usr/share/icons
 cp -r ./files/default /usr/share/icons
 cp -r ./files/elementary /usr/share/icons
-
-# COMMAND
-if [ -z `locale | grep 'LANG=ru_RU'` ]
-then
-  cp ./files/locale.gen /etc
-  locale-gen
-fi
-
-# ADD USERS
-if [ -z `cat /etc/passwd | grep $user` ] 
-then
-  useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video,network -s /bin/bash $user
-  passwd && passwd $user
-fi
-
-# ADD SERVICES
-if [ -z `systemctl | grep 'wicd.service' | awk '{print($1)}'` ]
-then
-  systemctl enable wicd.service
-fi
