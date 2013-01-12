@@ -64,5 +64,5 @@ then
 fi
 
 # CHOWN
-chown -R web:users /home/web
-chown root:named /var/named/dev.zone
+if [ -d /home/web ] ; then chown -R web:users /home/web ; else echo 'not dir /home/web' ; fi
+if [ -f /var/named/dev.zone ] ; then chown root:named /var/named/dev.zone ; else echo 'not file /var/named/dev.zone' ; fi
