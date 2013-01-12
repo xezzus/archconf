@@ -18,6 +18,12 @@ if [ `pacman -Qi sakura | wc -l` -eq 0 ] ; then $install sakura ; fi
 if [ `pacman -Qi slim | wc -l` -eq 0 ] ; then $install slim ; fi
 if [ `pacman -Qi slim-themes | wc -l` -eq 0 ] ; then $install slim-themes ; fi
 if [ `pacman -Qi ttf-liberation | wc -l` -eq 0 ] ; then $install ttf-liberation ; fi
+if [ `pacman -Qi flashplugin | wc -l` -eq 0 ] ; then $install flashplugin ; fi
+if [ `pacman -Qi alsa-utils | wc -l` -eq 0 ] ; then $install alsa-utils ; fi
+if [ `pacman -Qi alsa-lib | wc -l` -eq 0 ] ; then $install alsa-lib ; fi
+if [ `pacman -Qi alsa-oss | wc -l` -eq 0 ] ; then $install alsa-oss ; fi
+if [ `pacman -Qi alsa-plugin | wc -l` -eq 0 ] ; then $install alsa-plugin ; fi
+if [ `pacman -Qi libflashsupport-oss | wc -l` -eq 0 ] ; then $install libflashsupport-oss ; fi
 
 # DWM
 abs community/dwm
