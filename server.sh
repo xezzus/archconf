@@ -4,6 +4,7 @@
 install='pacman --noconfirm -S'
 
 # INSTALL
+if [ `pacman -Qi | grep 'base-devel' | wc -l` -eq 0 ] ; then $install base-devel ; fi
 if [ `pacman -Qi | grep 'bind' | wc -l` -eq 0 ] ; then $install bind ; fi
 if [ `pacman -Qi | grep 'dnsutils' | wc -l` -eq 0 ] ; then $install dnsutils ; fi
 if [ `pacman -Qi | grep 'nginx' | wc -l` -eq 0 ] ; then $install nginx ; fi

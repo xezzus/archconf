@@ -10,5 +10,4 @@
 proc            /proc           proc    defaults        0       0
 tmpfs           /tmp            tmpfs   size=100M       0       0
 tmpfs           /var/tmp        tmpfs   size=100M       0       0
-tmpfs           /var/log        tmpfs   size=100M       0       0
 
