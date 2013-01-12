@@ -6,4 +6,4 @@ if [ `pacman -Qi | grep 'dnsutils' | wc -l` -eq 0 ] ; then pacman -S dnsutils ; 
 # INSTALL BIND
 cp ./bind/named.conf.local ./
 cp ./bind/named.conf.options ./
-cp ./bind/db.dev ./
+cp ./bind/db.dev /var/named/dev.zona
