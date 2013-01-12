@@ -3,16 +3,10 @@
 # METHOD INSTALL
 install='pacman --noconfirm -S'
 
-# INSTALL BIND
+# INSTALL
 if [ `pacman -Qi | grep 'bind' | wc -l` -eq 0 ] ; then $install bind ; fi
 if [ `pacman -Qi | grep 'dnsutils' | wc -l` -eq 0 ] ; then $install dnsutils ; fi
-cp ./files/dev.zone /var/named && chown root:named /var/named/dev.zone
-
-# INSTALL NGINX
 if [ `pacman -Qi | grep 'nginx' | wc -l` -eq 0 ] ; then $install nginx ; fi
-cp ./files/nginx.conf /etc/nginx
-
-# INSTALL PHP
 if [ `pacman -Qi | grep 'php' | wc -l` -eq 0 ] ; then $install php ; fi
 if [ `pacman -Qi | grep 'php-fpm' | wc -l` -eq 0 ] ; then $install php-fpm ; fi
 if [ `pacman -Qi | grep 'php-gd' | wc -l` -eq 0 ] ; then $install php-gd ; fi
@@ -28,11 +22,13 @@ mkdir -p /home/web/public
 cp -r ./files/info /home/web/public
 cp ./files/php.ini /etc/php
 cp ./files/php-fpm.conf /etc/php
+cp ./files/dev.zone /var/named && chown root:named /var/named/dev.zone
+cp ./files/nginx.conf /etc/nginx
 
 # ADD PHP-FPM
 if [ `systemctl | grep 'php-fpm.service' | wc -l` -eq 0 ]
 then
-  systemctl enable wicd.service
+  systemctl enable php-fpm.service
 fi
 
 # ADD NGINX
@@ -42,7 +38,7 @@ then
 fi
 
 # ADD BIND
-if [ `systemctl | grep 'bind.service' | wc -l` -eq 0 ]
+if [ `systemctl | grep 'named.service' | wc -l` -eq 0 ]
 then
-  systemctl enable bind.service
+  systemctl enable named.service
 fi

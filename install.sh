@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # METHOD INSTALL
-install='pacman --noconfirm -S'
 user=web
+install='pacman --noconfirm -S'
 
 # UPDATE
 cp ./files/mirrorlist /etc/pacman.d
@@ -34,7 +34,7 @@ then
 fi
 
 # ADD USERS
-if [ -z `cat /etc/passwd | grep $user` ] 
+if [ `cat /etc/passwd | grep $user | wc -l` -eq 0 ] 
 then
   useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video,network -s /bin/bash $user
   passwd && passwd $user
@@ -45,6 +45,3 @@ if [ -z `systemctl | grep 'wicd.service' | awk '{print($1)}'` ]
 then
   systemctl enable wicd.service
 fi
-
-# CONFIG USER
-cp ./files/gitconfig /home/$user/.gitconfig
