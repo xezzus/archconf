@@ -42,3 +42,6 @@ if [ `systemctl | grep 'named.service' | wc -l` -eq 0 ]
 then
   systemctl enable named.service
 fi
+
+# CHOWN
+chown -r web:users /home/web
