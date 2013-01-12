@@ -16,6 +16,8 @@ if [ `pacman -Qi | grep 'php-pear' | wc -l` -eq 0 ] ; then $install php-pear ; f
 if [ `pacman -Qi | grep 'php-pgsql' | wc -l` -eq 0 ] ; then $install php-pgsql ; fi
 if [ `pacman -Qi | grep 'php-sqlite' | wc -l` -eq 0 ] ; then $install php-sqlite ; fi
 if [ `pacman -Qi | grep 'php-xsl' | wc -l` -eq 0 ] ; then $install php-xsl ; fi
+if [ `pacman -Qi | grep 'vim' | wc -l` -eq 0 ] ; then $install gvim ; fi
+if [ `pacman -Qi | grep 'mc' | wc -l` -eq 0 ] ; then $install mc ; fi
 if [ `pecl list | grep mongo | wc -l` -eq 0 ] ; then pecl install mongo ; fi
 
 # CONFIG
@@ -25,6 +27,10 @@ cp ./files/php.ini /etc/php
 cp ./files/php-fpm.conf /etc/php
 cp ./files/dev.zone /var/named && chown root:named /var/named/dev.zone
 cp ./files/nginx.conf /etc/nginx
+cp ./files/vimrc /etc
+cp ./files/vide /usr/bin
+cp ./files/jellybeans.vim /usr/share/vim/vim73/colors
+cp ./files/mc.ext /etc/mc
 
 # ADD PHP-FPM
 if [ `systemctl | grep 'php-fpm.service' | wc -l` -eq 0 ]
