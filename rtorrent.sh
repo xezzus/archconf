@@ -9,8 +9,8 @@ video=/media/video
 loads=/media/loads
 
 # INSTALL
-if [ `pacman -Qi | grep 'rtorrect' | wc -l` -eq 0 ] ; then $install rtorrect ; fi
-if [ `pacman -Qi | grep 'screen' | wc -l` -eq 0 ] ; then $install screen ; fi
+if [ `pacman -Qi rtorrent | wc -l` -eq 0 ] ; then $install rtorrect ; fi
+if [ `pacman -Qi screen | wc -l` -eq 0 ] ; then $install screen ; fi
 
 # CONFIG
 cp ./files/rtorrent /etc/rc.s
