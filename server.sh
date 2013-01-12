@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# WORKSPACE
+mkdir -p /home/web/public
+
 # METHOD INSTALL
 install='pacman --noconfirm -S'
 
