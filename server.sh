@@ -44,4 +44,4 @@ then
 fi
 
 # CHOWN
-chown -r web:users /home/web
+chown -R web:users /home/web
