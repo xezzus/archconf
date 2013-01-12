@@ -17,6 +17,7 @@ if [ `pacman -Qi chromium | wc -l` -eq 0 ] ; then $install chromium ; fi
 if [ `pacman -Qi sakura | wc -l` -eq 0 ] ; then $install sakura ; fi
 if [ `pacman -Qi slim | wc -l` -eq 0 ] ; then $install slim ; fi
 if [ `pacman -Qi slim-themes | wc -l` -eq 0 ] ; then $install slim-themes ; fi
+if [ `pacman -Qi ttf-liberation | wc -l` -eq 0 ] ; then $install ttf-liberation ; fi
 
 # DWM
 abs community/dwm
@@ -30,8 +31,9 @@ mkdir -p /home/web/.config
 cp ./files/vide /usr/bin
 cp ./files/xinitrc $user/.xinitrc
 cp ./files/conkyrc $user/.conkyrc
-cp ./files/xorg.conf /etc/X11
+cp ./files/slim.conf /etc
 cp -r ./files/config/sakura $user/.config
+cp -r ./files/config/mc $user/.config
 cp -r ./files/dzen $user/.dzen
 cp -r ./files/mplayer $user/.mplayer
 
