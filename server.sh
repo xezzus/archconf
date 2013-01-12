@@ -21,6 +21,6 @@ if [ `pacman -Qi | grep 'php-pear' | wc -l` -eq 0 ] ; then $install php-pear ; f
 if [ `pacman -Qi | grep 'php-pgsql' | wc -l` -eq 0 ] ; then $install php-pgsql ; fi
 if [ `pacman -Qi | grep 'php-sqlite' | wc -l` -eq 0 ] ; then $install php-sqlite ; fi
 if [ `pacman -Qi | grep 'php-xsl' | wc -l` -eq 0 ] ; then $install php-xsl ; fi
-if [ `pecl list | grep mongo | wc -l` -eq 0 ] : then pecl install mongo ; fi
+if [ `pecl list | grep mongo | wc -l` -eq 0 ] ; then pecl install mongo ; fi
 cp ./files/php.ini /etc/php
 cp ./files/php-fpm.conf /etc/php
