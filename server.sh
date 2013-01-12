@@ -25,7 +25,7 @@ mkdir -p /home/web/public
 cp -r ./files/info /home/web/public
 cp ./files/php.ini /etc/php
 cp ./files/php-fpm.conf /etc/php
-cp ./files/dev.zone /var/named && chown root:named /var/named/dev.zone
+cp ./files/dev.zone /var/named
 cp ./files/nginx.conf /etc/nginx
 cp ./files/vimrc /etc
 cp ./files/vide /usr/bin
@@ -52,3 +52,4 @@ fi
 
 # CHOWN
 chown -R web:users /home/web
+chown root:named /var/named/dev.zone
