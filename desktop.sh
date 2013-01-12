@@ -4,6 +4,7 @@
 install='pacman --noconfirm -S'
 user=/home/web
 
+if [ `pacman -Qi xorg-xsetroot | wc -l` -eq 0 ] ; then $install xorg-server ; fi
 if [ `pacman -Qi xorg-server | wc -l` -eq 0 ] ; then $install xorg-server ; fi
 if [ `pacman -Qi xorg-xinit | wc -l` -eq 0 ] ; then $install xorg-xinit ; fi
 if [ `pacman -Qi dmenu | wc -l` -eq 0 ] ; then $install dmenu ; fi
@@ -14,6 +15,7 @@ if [ `pacman -Qi chromium | wc -l` -eq 0 ] ; then $install chromium ; fi
 if [ `pacman -Qi sakura | wc -l` -eq 0 ] ; then $install sakura ; fi
 if [ `pacman -Qi slim | wc -l` -eq 0 ] ; then $install slim ; fi
 if [ `pacman -Qi slim-themes | wc -l` -eq 0 ] ; then $install slim-themes ; fi
+if [ `pacman -Qi gvim | wc -l` -eq 0 ] ; then $install gvim ; fi
 
 # DWM
 abs community/dwm
@@ -24,6 +26,7 @@ makepkg -i --skipinteg --asroot --clean && rm *.tar.*
 
 # CONFIG USER
 mkdir -p /home/web/.config
+cp ./files/vide /usr/bin
 cp ./files/xinitrc $user/.xinitrc
 cp ./files/conkyrc $user/.conkyrc
 cp ./files/xorg.conf /etc/X11

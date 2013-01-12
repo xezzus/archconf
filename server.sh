@@ -44,7 +44,6 @@ cp ./files/php-fpm.conf /etc/php
 cp ./files/dev.zone /var/named
 cp ./files/nginx.conf /etc/nginx
 cp ./files/vimrc /etc
-cp ./files/vide /usr/bin
 cp ./files/jellybeans.vim /usr/share/vim/vim73/colors
 cp ./files/mc.ext /etc/mc
 
