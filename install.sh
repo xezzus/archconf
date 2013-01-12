@@ -35,6 +35,7 @@ if [ `cat /etc/passwd | grep $user | wc -l` -eq 0 ]
 then
   useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video,network -s /bin/bash $user
   passwd && passwd $user
+  cp ./files/gitconfig /home/$user/.gitconfig
 fi
 
 # ADD SERVICES
