@@ -4,21 +4,23 @@
 install='pacman --noconfirm -S'
 
 # INSTALL
-if [ `pacman -Qi | grep 'base-devel' | wc -l` -eq 0 ] ; then $install base-devel ; fi
-if [ `pacman -Qi | grep 'bind' | wc -l` -eq 0 ] ; then $install bind ; fi
-if [ `pacman -Qi | grep 'dnsutils' | wc -l` -eq 0 ] ; then $install dnsutils ; fi
-if [ `pacman -Qi | grep 'nginx' | wc -l` -eq 0 ] ; then $install nginx ; fi
-if [ `pacman -Qi | grep 'php' | wc -l` -eq 0 ] ; then $install php ; fi
-if [ `pacman -Qi | grep 'php-fpm' | wc -l` -eq 0 ] ; then $install php-fpm ; fi
-if [ `pacman -Qi | grep 'php-gd' | wc -l` -eq 0 ] ; then $install php-gd ; fi
-if [ `pacman -Qi | grep 'php-mcrypt' | wc -l` -eq 0 ] ; then $install php-mcrypt ; fi
-if [ `pacman -Qi | grep 'php-pear' | wc -l` -eq 0 ] ; then $install php-pear ; fi
-if [ `pacman -Qi | grep 'php-pgsql' | wc -l` -eq 0 ] ; then $install php-pgsql ; fi
-if [ `pacman -Qi | grep 'php-sqlite' | wc -l` -eq 0 ] ; then $install php-sqlite ; fi
-if [ `pacman -Qi | grep 'php-xsl' | wc -l` -eq 0 ] ; then $install php-xsl ; fi
-if [ `pacman -Qi | grep 'vim' | wc -l` -eq 0 ] ; then $install gvim ; fi
-if [ `pacman -Qi | grep 'mc' | wc -l` -eq 0 ] ; then $install mc ; fi
-if [ `pecl list | grep mongo | wc -l` -eq 0 ] ; then pecl install mongo ; fi
+pacman -S base-devel bind dnsutils nginx php php-fpm php-gd php-mcrypt php-pear php-pgsql php-sqlite php-xsl mc vim
+pecl install mongo
+#if [ `pacman -Qi | grep 'base-devel' | wc -l` -eq 0 ] ; then $install base-devel ; fi
+#if [ `pacman -Qi | grep 'bind' | wc -l` -eq 0 ] ; then $install bind ; fi
+#if [ `pacman -Qi | grep 'dnsutils' | wc -l` -eq 0 ] ; then $install dnsutils ; fi
+#if [ `pacman -Qi | grep 'nginx' | wc -l` -eq 0 ] ; then $install nginx ; fi
+#if [ `pacman -Qi | grep 'php' | wc -l` -eq 0 ] ; then $install php ; fi
+#if [ `pacman -Qi | grep 'php-fpm' | wc -l` -eq 0 ] ; then $install php-fpm ; fi
+#if [ `pacman -Qi | grep 'php-gd' | wc -l` -eq 0 ] ; then $install php-gd ; fi
+#if [ `pacman -Qi | grep 'php-mcrypt' | wc -l` -eq 0 ] ; then $install php-mcrypt ; fi
+#if [ `pacman -Qi | grep 'php-pear' | wc -l` -eq 0 ] ; then $install php-pear ; fi
+#if [ `pacman -Qi | grep 'php-pgsql' | wc -l` -eq 0 ] ; then $install php-pgsql ; fi
+#if [ `pacman -Qi | grep 'php-sqlite' | wc -l` -eq 0 ] ; then $install php-sqlite ; fi
+#if [ `pacman -Qi | grep 'php-xsl' | wc -l` -eq 0 ] ; then $install php-xsl ; fi
+#if [ `pacman -Qi | grep 'vim' | wc -l` -eq 0 ] ; then $install gvim ; fi
+#if [ `pacman -Qi | grep 'mc' | wc -l` -eq 0 ] ; then $install mc ; fi
+#if [ `pecl list | grep mongo | wc -l` -eq 0 ] ; then pecl install mongo ; fi
 
 # CONFIG
 mkdir -p /home/web/public
