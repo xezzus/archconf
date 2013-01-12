@@ -1,0 +1,5 @@
+CONNECTION='ethernet'
+DESCRIPTION='dhcp'
+INTEFACE='eth0'
+IP='dhcp'
+
