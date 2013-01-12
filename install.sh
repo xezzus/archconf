@@ -15,6 +15,7 @@ if [ `pacman -Qi netcfg | wc -l` -eq 0 ] ; then $install netcfg ; fi
 if [ `pacman -Qi wpa_actiond | wc -l` -eq 0 ] ; then $install wpa_actiond ; fi
 if [ `pacman -Qi ifplugd | wc -l` -eq 0 ] ; then $install ifplugd ; fi
 if [ `pacman -Qi sudo | wc -l` -eq 0 ] ; then $install sudo ; fi
+if [ `pacman -Qi openssh | wc -l` -eq 0 ] ; then $install openssh ; fi
 
 # CONFIG ROOT
 cp ./files/fstab /etc
