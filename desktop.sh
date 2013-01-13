@@ -17,7 +17,7 @@ if [ `pacman -Qi chromium | wc -l` -eq 0 ] ; then $install chromium ; fi
 if [ `pacman -Qi sakura | wc -l` -eq 0 ] ; then $install sakura ; fi
 if [ `pacman -Qi slim | wc -l` -eq 0 ] ; then $install slim ; fi
 if [ `pacman -Qi slim-themes | wc -l` -eq 0 ] ; then $install slim-themes ; fi
-if [ `pacman -Qi ttf-liberation | wc -l` -eq 0 ] ; then $install ttf-liberation ; fi
+if [ `pacman -Qi ttf-droid | wc -l` -eq 0 ] ; then $install ttf-droid ; fi
 if [ `pacman -Qi flashplugin | wc -l` -eq 0 ] ; then $install flashplugin ; fi
 if [ `pacman -Qi alsa-utils | wc -l` -eq 0 ] ; then $install alsa-utils ; fi
 if [ `pacman -Qi alsa-lib | wc -l` -eq 0 ] ; then $install alsa-lib ; fi
