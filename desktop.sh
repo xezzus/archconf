@@ -26,11 +26,7 @@ if [ `pacman -Qi alsa-plugin | wc -l` -eq 0 ] ; then $install alsa-plugin ; fi
 if [ `pacman -Qi libflashsupport-oss | wc -l` -eq 0 ] ; then $install libflashsupport-oss ; fi
 
 # DWM
-abs community/dwm
-cp -r /var/abs/community/dwm/* ./
-cp ./files/dwm.c ./
-cp ./files/config.h ./
-makepkg -i --skipinteg --asroot --clean && rm *.tar.*
+./dwm.sh
 
 # CONFIG USER
 mkdir -p /home/web/.config
@@ -38,6 +34,7 @@ cp ./files/vide /usr/bin
 cp ./files/xinitrc $user/.xinitrc
 cp ./files/conkyrc $user/.conkyrc
 cp ./files/slim.conf /etc
+cp ./files/fonts.conf /etc/fonts
 cp -r ./files/config/sakura $user/.config
 cp -r ./files/config/mc $user/.config
 cp -r ./files/dzen $user/.dzen
