@@ -16,7 +16,7 @@ set scrolljump=10
 " Теперь нет необходимости передвигать курсор к краю экрана, чтобы опуститься в режиме редактирования
 set scrolloff=10
 " Шрифт
-set guifont=Liberation\ Mono\ 9
+set guifont=Droid\ Sans\ Mono 9
 " Кодировка текста по умолчанию
 set termencoding=utf-8
 " Скрыть панель в gui версии ибо она не нужна
