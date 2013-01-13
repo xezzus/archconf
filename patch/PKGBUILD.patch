@@ -1,0 +1,4 @@
+17a18
+> 	dwm.c
+25a27
+>   cp $srcdir/dwm.c dwm.c

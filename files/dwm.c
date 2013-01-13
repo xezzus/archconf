@@ -20,7 +20,6 @@
  *
  * To understand everything else, start reading main().
  */
-test
 #include <errno.h>
 #include <locale.h>
 #include <stdarg.h>
@@ -1842,7 +1841,7 @@ updatebarpos(Monitor *m) {
 	m->wh = m->mh;
 	if(m->showbar) {
 		m->wh -= bh;
-		m->by = m->topbar ? m->wy : m->wy + m->wh
+		m->by = m->topbar ? m->wy : m->wy + m->wh;
 		m->wy = m->topbar ? m->wy + bh : m->wy;
 	}
 	else
@@ -1888,7 +1887,7 @@ updategeom(void) {
 					m->mx = m->wx = unique[i].x_org;
 					m->my = m->wy = unique[i].y_org;
 					m->mw = m->ww = unique[i].width;
-					m->mh = m->wh = unique[i].height - 160;
+					m->mh = m->wh = unique[i].height - 16;
 					updatebarpos(m);
 				}
 		}

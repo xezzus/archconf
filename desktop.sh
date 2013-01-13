@@ -25,9 +25,6 @@ if [ `pacman -Qi alsa-oss | wc -l` -eq 0 ] ; then $install alsa-oss ; fi
 if [ `pacman -Qi alsa-plugin | wc -l` -eq 0 ] ; then $install alsa-plugin ; fi
 if [ `pacman -Qi libflashsupport-oss | wc -l` -eq 0 ] ; then $install libflashsupport-oss ; fi
 
-# DWM
-./dwm.sh
-
 # CONFIG USER
 mkdir -p /home/web/.config
 cp ./files/vide /usr/bin
@@ -49,3 +46,6 @@ cp -r ./files/default /usr/share/icons
 cp -r ./files/elementary /usr/share/icons
 
 chown -R web:users $user
+
+# DWM
+./dwm.sh
