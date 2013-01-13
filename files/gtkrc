@@ -1,6 +1,6 @@
 gtk-icon-theme-name="elementary"
 include "/usr/share/themes/BSMsdm/gtk-2.0/gtkrc"
 
-style "user-font" { font_name="Droid Sans Mono 9" }
+style "user-font" { font_name="Droid Sans 9" }
 widget_class "*" style "user-font"
-gtk-font-name="Droid Sans Mono 9"
+gtk-font-name="Droid Sans 9"
