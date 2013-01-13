@@ -35,6 +35,7 @@ cp ./files/xinitrc $user/.xinitrc
 cp ./files/conkyrc $user/.conkyrc
 cp ./files/slim.conf /etc
 cp ./files/fonts.conf /etc/fonts
+cp ./files/20-keyboard-layout.conf /etc/X11/xorg.conf.d
 cp -r ./files/config/sakura $user/.config
 cp -r ./files/config/mc $user/.config
 cp -r ./files/dzen $user/.dzen
